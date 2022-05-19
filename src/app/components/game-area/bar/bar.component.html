@@ -1,0 +1,10 @@
+<div [id]="pos" darg-over class="bar">
+
+
+    <span>{{pos}}</span>
+
+    <div *ngFor="let i of whitePieces" class="piece white" [draggable]="true"></div>
+    <div *ngFor="let i of blackPieces" class="piece black" [draggable]="true"></div>
+
+</div>
+
