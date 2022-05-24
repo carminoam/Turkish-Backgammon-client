@@ -1,4 +1,4 @@
-import { Directive, HostListener, Input, NgModule } from '@angular/core';
+import { Directive, HostListener } from '@angular/core';
 import { GamePositionService } from '../services/game-position.service';
 
 @Directive({
@@ -10,31 +10,23 @@ export class DragOverDirective {
     private gamePositionService : GamePositionService
   ) { }
 
-  public currentBarId: number;
-
-  @HostListener("dragover", ['$event'])
-  public onDragOver(event: any): void {
-    event.preventDefault();
-    console.log(event.currentTarget.id)
-    this.currentBarId = event.currentTarget.id;
-    return event.currentTarget.id;
-  }
-
   @HostListener('dragstart', ['$event'])
-  public onDragStart(event: any) {
+  public onDragStart(event: any): void {
+    console.log("drag start : " + event.currentTarget.id);
+  }
+
+  @HostListener('dragenter', ['$event'])
+  public onDragEnter(event: any): void {
+    console.log("drag enter : " + event.currentTarget.id);
 
   }
 
-  // @HostListener('dragend', ['$event'])
-  // public async onDragEnd(event: any) {
-  //   await this.gamePositionService.whiteMakeMove(24,22);
+  // @HostListener('dragend')
+  // public onDragEnd(): void {
+  //   console.log("from : " + this.idFrom, "to : " + this.idTo);
   // }
+
 }
-
-
-
-
-
 
 
 

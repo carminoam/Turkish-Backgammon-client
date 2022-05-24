@@ -16,12 +16,6 @@ export class BoardComponent implements OnInit {
 
   public gamePosition: GamePositionModel;
 
-  // in future the object will passed from the server.
-  // public gamePosition: GamePositionModel = {
-  //   blackPosition: [2,0,0,0,0,0,0,0,0,0,0,5,0,0,0,3,0,0,5,0,0,0,0,0],
-  //   whitePosition: [0,0,0,0,0,5,0,3,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,2]
-  // }
-
 
   async ngOnInit(): Promise<void> {
     try {
@@ -30,10 +24,6 @@ export class BoardComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
-
-    // console.log(this.gamePositionService.showStartPosition());
-    // this.gamePosition = store.getState().gamePositionState.gamePosition;
-    // console.log(this.gamePosition);
   }
 
 }

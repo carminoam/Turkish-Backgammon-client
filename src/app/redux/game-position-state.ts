@@ -38,8 +38,8 @@ export function gamePositionReducer(currentState = new GamePositionState(), acti
             break;
         case GamePositionActionType.ResetGamePosition:
             newState.gamePosition = {
-                blackPosition: [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 3, 0, 0, 5, 0, 0, 0, 0, 0],
-                whitePosition: [0, 0, 0, 0, 0, 5, 0, 3, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+                blackPosition: [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 3, 0, 5, 0, 0, 0, 0, 0],
+                whitePosition: [0, 0, 0, 0, 0, 5, 0, 3, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2]
             };
             break;
     }

@@ -1,11 +1,12 @@
-.bar {
+/* .bar {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 2.5rem;
     column-gap: 0px;
-    z-index: 10;
-}
+    height: 100%;
+    z-index: 4;
+} */
 
 .piece {
     display: block;
@@ -16,6 +17,7 @@
     border: 1px solid blue;
     padding: 0px;
     margin: 0px;
+    z-index: 3;
 }
 
 .white {

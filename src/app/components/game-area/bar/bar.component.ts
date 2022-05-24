@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { GamePositionModel } from 'src/app/models/game-position.model';
 
 @Component({
@@ -6,12 +6,10 @@ import { GamePositionModel } from 'src/app/models/game-position.model';
   templateUrl: './bar.component.html',
   styleUrls: ['./bar.component.css']
 })
-export class BarComponent implements OnInit {
+export class BarComponent implements OnChanges{
 
-  @Input()
-  public pos: number;
-  @Input()
-  public gamePos: GamePositionModel;
+  @Input() pos: number;
+  @Input() gamePos: GamePositionModel;
 
   constructor(
   
@@ -20,11 +18,10 @@ export class BarComponent implements OnInit {
   public whitePieces: number[];
   public blackPieces: number[];
 
-  ngOnInit(){
+  ngOnChanges(){
     // console.log(this.gamePos);
-    this.whitePieces = Array(this.gamePos.whitePosition[this.pos -1]);
-    console.log(this.whitePieces)
-    this.blackPieces = Array(this.gamePos.blackPosition[this.pos -1]);
+    this.whitePieces = Array(this.gamePos?.whitePosition[this.pos - 1]).fill(8);
+    this.blackPieces = Array(this.gamePos?.blackPosition[this.pos - 1]).fill(8);
   }
 
 

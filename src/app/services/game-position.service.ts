@@ -10,9 +10,6 @@ export class GamePositionService {
 
   constructor() { }
 
-  // public async whiteMakeMove(from: number, to: number): Promise<void> {
-  //   let gamePosition = store.getState().gamePositionState.gamePosition;
-  // }
 
   public async fetchGamePosition(): Promise<GamePositionModel> {
     if (store.getState().gamePositionState.gamePosition === undefined) {
@@ -21,5 +18,12 @@ export class GamePositionService {
     let gamePosition = store.getState().gamePositionState.gamePosition;
     return gamePosition;
   }
+
+  public async updateGamePosition(gamePosition: GamePositionModel): Promise<GamePositionModel> {
+    await store.dispatch(updateGamePosition(gamePosition));
+    return gamePosition;
+  }
+
+
 
 }
